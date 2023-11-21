@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Celulares</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="container">
+            <h1>Zuper Selulares</h1>
+            <nav>
+                <ul>
+                    <li><a href="quienessomos.html">¿Quiénes Somos?</a></li>
+                    <li><a href="historia.html">Historia</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="promociones.html">Promociones</a></li>
+                    <li><a href="sucursales.html">Sucursales</a></li>
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                    <li><a href="TiendaZ.html">Inicio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <br><br><br>
+    <center>
+        <h3>Información de Contacto</h3>
+<p>Puedes ponerte en contacto con nosotros a través de los siguientes medios:</p>
+<ul>
+    <li>Correo Electrónico: zuperselulares@hotmail.com</li>
+    <li>Teléfono: +52 7777 9898</li>
+</ul>
+    <h2>Contáctanos</h2>
+    
+    <div id="contact-form">
+        <h3>Formulario de Contacto</h3>
+        <p>Envia tus sugerencias o molestias aqui</p>
+        <form id="myForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="button" onclick="submitForm()">Enviar Mensaje</button>
+        </form>
+    </div>
+
+    <div id="response-message"></div>
+<script>
+    function submitForm() {
+        // Recupera los valores del formulario
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+
+        // Valida los campos (puedes personalizar las validaciones según tus necesidades)
+        if (name === "" || email === "" || message === "") {
+            alert("Por favor, completa todos los campos.");
+            return;
+        }
+
+        // Envía el formulario (aquí podrías realizar una solicitud AJAX a un servidor, pero para este ejemplo, simplemente mostraremos un mensaje)
+        var responseMessage = "¡Gracias por tu mensaje, " + name + "! Trataremos de solucionar tu problema lo antes posible";
+        document.getElementById("response-message").innerText = responseMessage;
+
+        // Limpia los campos del formulario
+        document.getElementById("myForm").reset();
+    }
+</script>
+    </center>
+</body>
+</html>
